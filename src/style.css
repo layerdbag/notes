@@ -38,12 +38,12 @@ button:focus {
 .sidebar {
   width: 20%;
   /* max-height: 100%; */
-
 }
 
-/* .sidebar--note {
-  display: flex;
-} */
+.editor {
+  width: 80%;
+  height: 90vh;
+}
 
 .sidebar--header {
   display: flex;
@@ -72,12 +72,6 @@ button:focus {
   color: white;
   border-radius: 3px;
   padding: 1rem;
-}
-
-.editor {
-  width: 80%;
-  height: 90vh;
-  /* height: 90%; */
 }
 
 .title {
@@ -131,6 +125,7 @@ button:focus {
 
   background-repeat: no-repeat;
   background-position: 50%;
+
 }
 
 .gutter.gutter-horizontal {
@@ -143,7 +138,6 @@ button:focus {
 
 .split {
   display: flex;
-
 }
 
 /* No Notes */

@@ -11,7 +11,8 @@ import {
   deleteDoc,
   setDoc
 } from 'firebase/firestore'
-import { notesCollection, db } from './firebase'
+import { notesCollection, db } from './firebase.config'
+
 
 export default function App() {
   const [notes, setNotes] = useState([])
@@ -48,17 +49,14 @@ export default function App() {
     }
   }, [currentNote])
 
-   /**
-     * Create an effect that runs any time the tempNoteText changes
-     * Delay the sending of the request to Firebase
-     *  uses setTimeout
-     * use clearTimeout to cancel the timeout
-     */
+  
 
   useEffect(() => {
     const timeoutId  = setTimeout(() => {
-      if (tempNoteText !== currentNote.body) 
-        updateNote(tempNoteText)
+      if (currentNote) {
+        if (tempNoteText !== currentNote.body) 
+          updateNote(tempNoteText)
+      }
     }, 500)
     return () => clearTimeout(timeoutId)
   }, [tempNoteText])
